@@ -21,5 +21,6 @@ func main() {
 	if err := godotenv.Load("example_dot_env"); err != nil {
 		log.Fatalln("Error loading '.env' file")
 	}
+	log.Info(".env file loaded")
 	cmd.Execute()
 }
