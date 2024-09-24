@@ -1,3 +1,5 @@
 URL_ONE=https://brasilapi.com.br
 URL_TWO=https://httpbin.org
 KEY=JthEY7LBgHe5M1s8FKm1iVlVyaNSM0uD
+PASSWORD=44c9d51ef246dc612345b6a4ef05c3af78516066dc510679cadce9eb4f0528af864416
+CONNECTION=username:xxx@(database.domain:3306)/database
