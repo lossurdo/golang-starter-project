@@ -10,11 +10,19 @@ type DateTimeFormat struct {
 	YYYYMMDD          bool
 	AddTime           bool
 	AddTimeAndSeconds bool
-	DashSepareted     bool
+	Dashed            bool
 }
 
-func GetTime(format DateTimeFormat) string {
-	t := time.Now() // format pattern: Mon Jan 2 15:04:05 MST 2006
+func CalendarAddDays(t time.Time, days int) time.Time {
+	return t.AddDate(0, 0, days)
+}
+
+func CalendarAddMonths(t time.Time, months int) time.Time {
+	return t.AddDate(0, months, 0)
+}
+
+func GetTime(format DateTimeFormat, t time.Time) string {
+	// format pattern: Mon Jan 2 15:04:05 MST 2006
 
 	tm := ""
 	if format.AddTime {
@@ -27,8 +35,8 @@ func GetTime(format DateTimeFormat) string {
 	return t.Format(tm)
 }
 
-func GetDateTime(format DateTimeFormat) string {
-	t := time.Now() // format pattern: Mon Jan 2 15:04:05 MST 2006
+func GetDateTime(format DateTimeFormat, t time.Time) string {
+	// format pattern: Mon Jan 2 15:04:05 MST 2006
 
 	tm := ""
 	if format.AddTime {
@@ -39,7 +47,7 @@ func GetDateTime(format DateTimeFormat) string {
 	}
 
 	sep := "/"
-	if format.DashSepareted {
+	if format.Dashed {
 		sep = "-"
 	}
 
