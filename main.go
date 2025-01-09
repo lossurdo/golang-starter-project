@@ -11,10 +11,12 @@ import (
 
 func init() {
 	log.SetFormatter(&log.TextFormatter{
-		ForceColors:     true,
-		FullTimestamp:   true,
-		TimestampFormat: time.UnixDate,
+		ForceColors:            true,
+		DisableLevelTruncation: true,
+		FullTimestamp:          true,
+		TimestampFormat:        time.UnixDate,
 	})
+	log.SetLevel(log.DebugLevel)
 }
 
 func main() {
