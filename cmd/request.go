@@ -52,7 +52,7 @@ func postRequest() {
 		JSON:    payload,
 	}
 
-	resp, err := grequests.Post(url+urlPath, options)
+	resp, err := grequests.Post(url+urlPath, grequests.FromRequestOptions(options))
 	if err != nil {
 		panic(err)
 	}
@@ -75,7 +75,7 @@ func getRequest() {
 		Headers: headers,
 	}
 
-	resp, err := grequests.Get(url+urlPath, options)
+	resp, err := grequests.Get(url+urlPath, grequests.FromRequestOptions(options))
 	if err != nil {
 		panic(err)
 	}
